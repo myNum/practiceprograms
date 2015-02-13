@@ -1,7 +1,14 @@
 
 day_of_week = raw_input("What day of the week is tomorrow? ").lower()
 
-if day_of_week == "saturday" or "sunday":
+weekend = [
+    "saturday",
+    "sunday",
+    "sat",
+    "sun",
+    "s"]
+
+if day_of_week in weekend:
     sleepin = True
 else:
     sleepin = False
