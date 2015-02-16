@@ -12,7 +12,16 @@ def number_guess():
         if user_number > comp_number:
             print "Woah, that is too high."
             user_number = int(raw_input("Try again. \n"))
-    else:
+
+        if user_number > 10:
+            print "Your guess must be between 1 and 10, including 1 and 10."
+            user_number = int(raw_input("Guess again. \n"))
+
+        if user_number < 1:
+            print "Your guess must be between 1 and 10, including 1 and 10."
+            user_number = int(raw_input("Guess again. \n"))
+
+        else:
             print "WINNER! You guessed correctly"
 
     play_again = raw_input("Would you like to play again? Y or N \n")
