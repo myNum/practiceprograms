@@ -30,15 +30,16 @@ def number_guess():
 
             except ValueError:
                 print "Dude, enter a NUMBER!"
-                continue
 
         play_again = raw_input("Would you like to play again? Y or N \n")
 
         if play_again in ["y", "Y", "yes", "YES"]:
             continue
-
+        
         else:
             print "Until next time!"
             break
 
 number_guess()
+
+#Items remaining: Change how the program continues if the exception is encountered. It works fine today, but I believe there is a better way to handle this.
