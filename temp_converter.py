@@ -1,16 +1,15 @@
 # This program allows users to convert the temperature from Celsius to Fahrenheit and vice versa.
 
 def get_temp():
+
     while True:
+        temp = raw_input("What temperature would you like to convert? \n> ")
+
         try:
-            temp = int(raw_input("What temperature would you like to convert? \n> "))
-            break
+           return int(temp)
 
         except ValueError:
             print "Your entry must be a number."
-            continue
-
-    return temp
 
 def temp_converter():
 
@@ -23,7 +22,7 @@ def temp_converter():
             converted_temp = 5.0 / 9.0 * (get_temp() - 32)
             print "The temperature in Celsius is", converted_temp, "degrees."
             break
-    
+
         elif c_or_f in ["f", "fahrenheit"]:
             # f = 9 / 5 * C + 32
             converted_temp = 9.0 / 5.0 * get_temp() + 32
