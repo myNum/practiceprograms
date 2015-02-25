@@ -10,9 +10,16 @@ def get_temp():
         except ValueError:
             print "Your entry must be a number."
 
+<<<<<<< HEAD
 
 def temp_converter():
     converted_temp = None
+=======
+def temp_converter():
+    converted_temp = None
+    
+    while converted_temp is None:
+>>>>>>> ccd5230cb477a862cdbd0c4aa6c3fe480b05167d
 
     while converted_temp is None:
         c_or_f = raw_input("Would you like to convert to Celsius or to Fahrenheit? (C or F) \n> ").lower()
@@ -26,7 +33,11 @@ def temp_converter():
             # f = 9 / 5 * C + 32
             converted_temp = 9.0 / 5.0 * get_temp() + 32
             print "The temperature in Fahrenheit is", converted_temp, "degrees."
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> ccd5230cb477a862cdbd0c4aa6c3fe480b05167d
         else:
             print "Please choose C for Celsius or F for Fahrenheit."
 
@@ -38,5 +49,9 @@ def temp_converter():
     else:
         print "Thanks for converting!"
 
+<<<<<<< HEAD
 
 temp_converter()
+=======
+temp_converter()
+>>>>>>> ccd5230cb477a862cdbd0c4aa6c3fe480b05167d
