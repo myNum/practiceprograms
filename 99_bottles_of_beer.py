@@ -11,9 +11,9 @@
 def the_song():
 
     bottle_count = 99
-    chorus1 = "bottles of beer on the wall."
-    chorus2 = "bottles of beer. \n"
-    chorus3 = "Take one down; pass it around. \n"
+    chorus1 = "bottles of beer on the wall,"
+    chorus2 = "bottles of beer.\n"
+    chorus3 = "Take one down; pass it around.\n"
 
     while bottle_count != 2:
         print bottle_count, chorus1, bottle_count, chorus2
@@ -30,11 +30,15 @@ def the_song():
 
         bottle_count = bottle_count - 1
 
-        print bottle_count, "bottle of beer on the wall. \n"
+        print bottle_count, "bottle of beer on the wall.\n"
 
     if bottle_count == 1:
-        print bottle_count, "bottle of beer on the wall.", bottle_count, "bottle of beer. \n"
+        print bottle_count, "bottle of beer on the wall.", bottle_count, "bottle of beer.\n"
         print chorus3
-        print "No more bottles of beer on the wall."
+        print "No more bottles of beer on the wall.\n"
+
+    print "No more bottles of beer on the wall. No more bottles of beer.\n"
+    print "Go to the store and buy some more.\n"
+    print "99 bottles of beer on the wall.\n"
 
 the_song()
