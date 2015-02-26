@@ -31,9 +31,9 @@ def number_guess():
             except ValueError:
                 print "Dude, enter a NUMBER!"
 
-        play_again = raw_input("Would you like to play again? Y or N \n")
+        play_again = raw_input("Would you like to play again? Y or N \n").lower()
 
-        if play_again in ["y", "Y", "yes", "YES"]:
+        if play_again in ["y", "yes"]:
             continue
         
         else:
