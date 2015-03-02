@@ -1,7 +1,7 @@
-# Rock-paper-scissors-lizard-Spock template
+# Rock-paper-scissors-lizard-Spock
 
 
-# The key idea of this program is to equate the strings
+print "This is the more advanced version of rock, paper, scissors. This game also includes lizard and Spock."
 # "rock", "paper", "scissors", "lizard", "Spock" to numbers
 # as follows:
 #
@@ -11,7 +11,6 @@
 # 3 - lizard
 # 4 - scissors
 
-# helper functions
 import random
 
 def name_to_number(name):
@@ -43,13 +42,10 @@ def number_to_name(number):
         print "That is not an acceptable option for RPSLS"
 
 
-def rpsls(player_choice):
-    
-    # print a blank line to separate consecutive games
-    print "\n"
+def rpsls():
     # print out the message for the player's choice
-    print "Player chooses:", player_choice
-    
+    player_choice = raw_input("What would you like to play?\n")
+    print "You chose:", player_choice
     # convert the player's choice to player_number using the function name_to_number()
     player_number = name_to_number(player_choice)
     # compute random guess for comp_number using random.randrange()
@@ -59,18 +55,15 @@ def rpsls(player_choice):
     # print out the message for computer's choice
     print "Computer chooses:", comp_choice
     # compute difference of comp_number and player_number modulo five
-    difference = (comp_number - player_number) % 5
+    difference = comp_number - player_number
     # use if/elif/else to determine winner, print winner message
     if difference == 0:
-        print "Player and computer tie!"
+        print "Tie!"
     elif difference <= 2:
-        print "Player wins!"
+        print "You wins!"
     elif difference > 2:
-        print "Computer wins!"
+        print "Ah, bummer; computer wins!"
 
 # test your code - THESE CALLS MUST BE PRESENT IN YOUR SUBMITTED CODE
-rpsls("rock")
-rpsls("Spock")
-rpsls("paper")
-rpsls("lizard")
-rpsls("scissors")
+rpsls()
+
