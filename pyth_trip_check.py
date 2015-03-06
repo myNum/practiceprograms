@@ -9,3 +9,11 @@ def pyth_check(a, b, c):
     b = raw_input("The second side?\n ")
     c = raw_input("And the third side? n")
 
+# At most one of a, b, c is a square.
+# The area of a Pythagorean triangle cannot be the square[9]:p. 17 or twice the square[9]:p. 21 of a natural number.
+# Exactly one of a, b is odd; c is odd.
+# Exactly one of a, b is divisible by 3.
+# Exactly one of a, b is divisible by 4.
+# Exactly one of a, b, c is divisible by 5.
+# The largest number that always divides abc is 60.
+# All prime factors of c are primes of the form 4n + 1. Therefore c is of the form 4n + 1.
