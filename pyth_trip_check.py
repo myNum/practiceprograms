@@ -17,3 +17,18 @@ def pyth_check(a, b, c):
 # Exactly one of a, b, c is divisible by 5.
 # The largest number that always divides abc is 60.
 # All prime factors of c are primes of the form 4n + 1. Therefore c is of the form 4n + 1.
+
+
+# More rules:
+# An interesting fact: a Pythagorean Triple always consists of: all even numbers, or two odd numbers and an even number.
+# A Pythagorean Triple can never be made up of all odd numbers or two even numbers and one odd number. This is true because:
+
+# The square of an odd number is an odd number and the square of an even number is an even number.
+
+# It is easy to construct sets of Pythagorean Triples.
+
+# When m and n are any two positive integers (m < n):
+
+# a = n2 - m2
+# b = 2nm
+# c = n2 + m2
