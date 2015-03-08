@@ -3,11 +3,39 @@
 # Extra Credit
 # If your program requires users to input the sides in a specific order, change the coding so the user can type in the sides in any order. Remember, the hypotenuse (c) is always the longest side.
 # Loop the program so the user can use it more than once without having to restart the program.
+a = 0
+b = 0
+c = 0
 
-def pyth_check(a, b, c):
-    a = raw_input("What is the first side of the triangle you want to check?\n ")
-    b = raw_input("The second side?\n ")
-    c = raw_input("And the third side? n")
+def triangle_sides():
+    global a, b, c
+    a = int(raw_input("What is the shortest side of the triangle you want to check?\n"))
+    b = int(raw_input("The middle side?\n"))
+    c = int(raw_input("And the longest side?\n"))
+    return a, b, c
+
+def c_odd():
+    global a, b, c
+    if c % 2 == 0:
+        return False
+    elif (a % 2 == 0) and (b % 2 == 0):
+        return False
+    elif (a % 5 == 0) and (b % 5 == 0):
+        return False
+# this is causing 3, 4, 5 to return the wrong result.
+#   elif (a % 5 != 0) and (b % 5 != 0):
+#       return False
+    else:
+        return True
+
+triangle_sides()
+
+pyth_trip = c_odd()
+
+if pyth_trip == True:
+    print "Looks like you discovered a Pythagorean Triple."
+elif pyth_trip == False:
+    print "Sorry, Charlie. That is not a Pythagorean Triple."
 
 # At most one of a, b, c is a square.
 # The area of a Pythagorean triangle cannot be the square[9]:p. 17 or twice the square[9]:p. 21 of a natural number.
