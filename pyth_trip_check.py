@@ -20,11 +20,20 @@ def c_odd():
         return False
     elif (a % 2 == 0) and (b % 2 == 0):
         return False
+    elif (a % 2 == 1) and (b % 2 == 1):
+        return False
+    elif (a % 3 == 0) and (b % 3 == 0):
+        return False
+    elif (a % 3 != 0) and (b % 3 != 0):
+        return False
+    elif (a % 4 == 0) and (b % 4 == 0):
+        return False
+    elif (a % 4 != 0) and (b % 4 != 0):
+        return False
     elif (a % 5 == 0) and (b % 5 == 0):
         return False
-# this is causing 3, 4, 5 to return the wrong result.
-#   elif (a % 5 != 0) and (b % 5 != 0):
-#       return False
+    elif (a % 5 != 0) and (b % 5 != 0) and (c % 5 != 0):
+        return False
     else:
         return True
 
