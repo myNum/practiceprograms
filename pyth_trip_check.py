@@ -34,6 +34,8 @@ def c_odd():
         return False
     elif (a % 5 != 0) and (b % 5 != 0) and (c % 5 != 0):
         return False
+    elif not ((c + a) % 2 == 0 and (c - a) % 2 == 0) or ((c + a) % 2 == 1 and (c - a) % 2 == 1):
+        return False
     else:
         return True
 
@@ -42,7 +44,7 @@ triangle_sides()
 pyth_trip = c_odd()
 
 if pyth_trip == True:
-    print "Looks like you discovered a Pythagorean Triple."
+    print "Looks like you discovered a Pythagorean Triple!"
 elif pyth_trip == False:
     print "Sorry, Charlie. That is not a Pythagorean Triple."
 
@@ -66,6 +68,6 @@ elif pyth_trip == False:
 
 # When m and n are any two positive integers (m < n):
 
-# a = n2 - m2
+# a = n**2 - m**2
 # b = 2nm
-# c = n2 + m2
+# c = n**2 + m**2
