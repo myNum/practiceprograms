@@ -39,14 +39,27 @@ def c_odd():
     else:
         return True
 
-triangle_sides()
+def main_function():
+    triangle_sides()
 
-pyth_trip = c_odd()
+    pyth_trip = c_odd()
 
-if pyth_trip == True:
-    print "Looks like you discovered a Pythagorean Triple!"
-elif pyth_trip == False:
-    print "Sorry, Charlie. That is not a Pythagorean Triple."
+    if pyth_trip == True:
+        print "Looks like you discovered a Pythagorean Triple!"
+    elif pyth_trip == False:
+        print "Sorry, Charlie. That is not a Pythagorean Triple."
+
+    while True:
+        check_again = raw_input("Do you want to check another triangle?\n").lower()
+
+        if check_again in ["yes", "y"]:
+            main_function()
+        else:
+            print "Thanks for tri-ing this program!"
+            break
+
+main_function()
+
 
 # At most one of a, b, c is a square.
 # The area of a Pythagorean triangle cannot be the square[9]:p. 17 or twice the square[9]:p. 21 of a natural number.
