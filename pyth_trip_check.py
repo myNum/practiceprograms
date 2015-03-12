@@ -34,26 +34,27 @@ def c_odd():
         return False
     elif (a % 5 != 0) and (b % 5 != 0) and (c % 5 != 0):
         return False
-    elif not ((c + a) % 2 == 0 and (c - a) % 2 == 0) or ((c + a) % 2 == 1 and (c - a) % 2 == 1):
+    elif (c + a) % 2 != (c - a) % 2:
+        return False
+    elif (c + a) % 2 != (c - a) % 2:
         return False
     else:
         return True
 
 def main_function():
-    triangle_sides()
-
-    pyth_trip = c_odd()
-
-    if pyth_trip == True:
-        print "Looks like you discovered a Pythagorean Triple!"
-    elif pyth_trip == False:
-        print "Sorry, Charlie. That is not a Pythagorean Triple."
-
     while True:
+        triangle_sides()
+        pyth_trip = c_odd()
+
+        if pyth_trip == True:
+            print "Looks like you discovered a Pythagorean Triple!"
+        elif pyth_trip == False:
+            print "Sorry, Charlie. That is not a Pythagorean Triple."
+
         check_again = raw_input("Do you want to check another triangle?\n").lower()
 
         if check_again in ["yes", "y"]:
-            main_function()
+            continue
         else:
             print "Thanks for tri-ing this program!"
             break
