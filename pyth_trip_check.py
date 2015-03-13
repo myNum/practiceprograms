@@ -1,14 +1,17 @@
 
-# Create a program that allows the user to input the sides of any triangle, and then return whether the triangle is a Pythagorean Triple or not.
+# Create a program that allows the user to input the sides of any triangle, and then return whether the triangle is a Pythagorean Triple or not. 
+# - Partially complete. Need to account for multiples of primative Pythagorean Triple.
 # Extra Credit
 # If your program requires users to input the sides in a specific order, change the coding so the user can type in the sides in any order. Remember, the hypotenuse (c) is always the longest side.
-# Loop the program so the user can use it more than once without having to restart the program.
+# - Not started. Need to research methods that allow the action of user inputs being order and assigned the correct corresponding variable. 
+# Loop the program so the user can use it more than once without having to restart the program. - Done
 a = 0
 b = 0
 c = 0
 
 def triangle_sides():
     global a, b, c
+    print "A Pythagorean triple consists of three positive integers a, b, and c, such that the square of a plus the sqaure of b equals the square of c.
     a = int(raw_input("What is the shortest side of the triangle you want to check?\n"))
     b = int(raw_input("The middle side?\n"))
     c = int(raw_input("And the longest side?\n"))
