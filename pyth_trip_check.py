@@ -9,9 +9,13 @@ c = 0
 
 def triangle_sides():
     global a, b, c
-    a = int(raw_input("What is the shortest side of the triangle you want to check?\n"))
-    b = int(raw_input("The middle side?\n"))
-    c = int(raw_input("And the longest side?\n"))
+    side1 = int(raw_input("What is the shortest side of the triangle you want to check?\n"))
+    side2 = int(raw_input("The middle side?\n"))
+    side3 = int(raw_input("And the longest side?\n"))
+    
+    list = [side1, side2, side3]
+    print sorted(list)
+    print list
     return a, b, c
 
 def c_odd():
