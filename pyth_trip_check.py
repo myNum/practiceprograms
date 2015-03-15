@@ -2,51 +2,47 @@
 # Create a program that allows the user to input the sides of any triangle, and then return whether the triangle is a Pythagorean Triple or not. 
 # - Partially complete. Need to account for multiples of primative Pythagorean Triple.
 # Extra Credit
-# If your program requires users to input the sides in a specific order, change the coding so the user can type in the sides in any order. Remember, the hypotenuse (c) is always the longest side.
-# - Not started. Need to research methods that allow the action of user inputs being order and assigned the correct corresponding variable. 
+# If your program requires users to input the sides in a specific order, change the coding so the user can type in the sides in any order. Remember, the hypotenuse (c) is always the longest side. - Done
 # Loop the program so the user can use it more than once without having to restart the program. - Done
-a = 0
-b = 0
-c = 0
+
+list = 0
 
 def triangle_sides():
-    global a, b, c
-    side1 = int(raw_input("What is the shortest side of the triangle you want to check?\n"))
-    side2 = int(raw_input("The middle side?\n"))
-    side3 = int(raw_input("And the longest side?\n"))
+    global list
+    side1 = int(raw_input("What is one side of the triangle that you want to check?\n"))
+    side2 = int(raw_input("The second side?\n"))
+    side3 = int(raw_input("And the last side?\n"))
     list = [side1, side2, side3]
-    print sorted(list)
-    print list
-# This section will be deleted once the list sorting section is completed.
-    print "A Pythagorean triple consists of three positive integers a, b, and c, such that the square of a plus the sqaure of b equals the square of c.
-    a = int(raw_input("What is the shortest side of the triangle you want to check?\n"))
-    b = int(raw_input("The middle side?\n"))
-    c = int(raw_input("And the longest side?\n"))
-    return a, b, c
+    list.sort()
+    return list
+
+# c = list[2]
+# b = list [1]
+# a = lsit [0]
 
 def c_odd():
-    global a, b, c
-    if c % 2 == 0:
+    global list
+    if list[2] % 2 == 0:
         return False
-    elif (a % 2 == 0) and (b % 2 == 0):
+    elif (list[0] % 2 == 0) and (list[1] % 2 == 0):
         return False
-    elif (a % 2 == 1) and (b % 2 == 1):
+    elif (list[0] % 2 == 1) and (list[1] % 2 == 1):
         return False
-    elif (a % 3 == 0) and (b % 3 == 0):
+    elif (list[0] % 3 == 0) and (list[1] % 3 == 0):
         return False
-    elif (a % 3 != 0) and (b % 3 != 0):
+    elif (list[0] % 3 != 0) and (list[1] % 3 != 0):
         return False
-    elif (a % 4 == 0) and (b % 4 == 0):
+    elif (list[0] % 4 == 0) and (list[1] % 4 == 0):
         return False
-    elif (a % 4 != 0) and (b % 4 != 0):
+    elif (list[0] % 4 != 0) and (list[1] % 4 != 0):
         return False
-    elif (a % 5 == 0) and (b % 5 == 0):
+    elif (list[0] % 5 == 0) and (list[1] % 5 == 0):
         return False
-    elif (a % 5 != 0) and (b % 5 != 0) and (c % 5 != 0):
+    elif (list[0] % 5 != 0) and (list[1] % 5 != 0) and (list[2] % 5 != 0):
         return False
-    elif (c + a) % 2 != (c - a) % 2:
+    elif (list[2] + list[0]) % 2 != (list[2] - list[0]) % 2:
         return False
-    elif (c + a) % 2 != (c - a) % 2:
+    elif (list[2] + list[0]) % 2 != (list[2] - list[0]) % 2:
         return False
     else:
         return True
