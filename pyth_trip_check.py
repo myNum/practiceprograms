@@ -9,16 +9,21 @@ list = 0
 
 def triangle_sides():
     global list
-    side1 = int(raw_input("What is one side of the triangle that you want to check?\n"))
-    side2 = int(raw_input("The second side?\n"))
-    side3 = int(raw_input("And the last side?\n"))
-    list = [side1, side2, side3]
-    list.sort()
-    return list
+    while True:
+        try:
+            side1 = int(raw_input("What is the first side of the triangle that you want to check?\n"))
+            side2 = int(raw_input("The second side?\n"))
+            side3 = int(raw_input("And the last side?\n"))
+            list = [side1, side2, side3]
+            list.sort()
+            return list
+        except ValueError:
+            print "Your entry must be an integer."
+
 
 # c = list[2]
-# b = list [1]
-# a = lsit [0]
+# b = list[1]
+# a = lsit[0]
 
 def c_odd():
     global list
