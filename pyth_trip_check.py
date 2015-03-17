@@ -5,6 +5,8 @@
 # If your program requires users to input the sides in a specific order, change the coding so the user can type in the sides in any order. Remember, the hypotenuse (c) is always the longest side. - Done
 # Loop the program so the user can use it more than once without having to restart the program. - Done
 
+import fractions
+
 list = 0
 
 def triangle_sides():
@@ -14,12 +16,18 @@ def triangle_sides():
             side1 = int(raw_input("What is the first side of the triangle that you want to check?\n"))
             side2 = int(raw_input("The second side?\n"))
             side3 = int(raw_input("And the last side?\n"))
-            list = [side1, side2, side3]
+# Checks for a GCD besides one for the three sides.
+            gd = fractions.gcd(side1, side2)
+            gd2 = fractions.gcd(side3, gd)
+# Returns the side reduced by the GCD when applicable.
+            side1r = side1 / gd2
+            side2r = side2 / gd2
+            side3r = side3 / gd2
+            list = [side1r, side2r, side3r]
             list.sort()
             return list
         except ValueError:
             print "Your entry must be an integer."
-
 
 # c = list[2]
 # b = list[1]
