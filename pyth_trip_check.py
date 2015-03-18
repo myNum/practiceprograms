@@ -1,6 +1,5 @@
 
-# Create a program that allows the user to input the sides of any triangle, and then return whether the triangle is a Pythagorean Triple or not. 
-# - Partially complete. Need to account for multiples of primative Pythagorean Triple.
+# Create a program that allows the user to input the sides of any triangle, and then return whether the triangle is a Pythagorean Triple or not. - Done
 # Extra Credit
 # If your program requires users to input the sides in a specific order, change the coding so the user can type in the sides in any order. Remember, the hypotenuse (c) is always the longest side. - Done
 # Loop the program so the user can use it more than once without having to restart the program. - Done
@@ -29,33 +28,45 @@ def triangle_sides():
         except ValueError:
             print "Your entry must be an integer."
 
-# c = list[2]
+# a = list[0]
 # b = list[1]
-# a = lsit[0]
+# c = list[2]
 
-def c_odd():
+def check():
     global list
+    # Basic Pythagorean Theorem test.
+    if ((list[0])**2) + ((list[1])**2) != list[2]**2:
+        return False
+    # C is always odd.
     if list[2] % 2 == 0:
         return False
+    # Either A or B must be odd, but not both.
     elif (list[0] % 2 == 0) and (list[1] % 2 == 0):
         return False
+    # Either A or B must be even, but not both.
     elif (list[0] % 2 == 1) and (list[1] % 2 == 1):
         return False
+    # Either A or B must be a mutiple of 3, but not both.
     elif (list[0] % 3 == 0) and (list[1] % 3 == 0):
         return False
+    # Either A or B must be a mutiple of 3, but not both.
     elif (list[0] % 3 != 0) and (list[1] % 3 != 0):
         return False
+    # Either A or B must be a mutiple of 4, but not both.
     elif (list[0] % 4 == 0) and (list[1] % 4 == 0):
         return False
+    # Either A or B must be a mutiple of 4, but not both.
     elif (list[0] % 4 != 0) and (list[1] % 4 != 0):
         return False
+    # A and B cannot both be multiples of 5.
     elif (list[0] % 5 == 0) and (list[1] % 5 == 0):
         return False
+    # One of A, B or C must be a multiple of 5.
     elif (list[0] % 5 != 0) and (list[1] % 5 != 0) and (list[2] % 5 != 0):
         return False
     elif (list[2] + list[0]) % 2 != (list[2] - list[0]) % 2:
         return False
-    elif (list[2] + list[0]) % 2 != (list[2] - list[0]) % 2:
+    elif (list[2] + list[0]) % 1 != (list[2] - list[0]) % 1:
         return False
     else:
         return True
@@ -63,15 +74,12 @@ def c_odd():
 def main_function():
     while True:
         triangle_sides()
-        pyth_trip = c_odd()
-
+        pyth_trip = check()
         if pyth_trip == True:
             print "Looks like you discovered a Pythagorean Triple!"
         elif pyth_trip == False:
             print "Sorry, Charlie. That is not a Pythagorean Triple."
-
         check_again = raw_input("Do you want to check another triangle?\n").lower()
-
         if check_again in ["yes", "y"]:
             continue
         else:
@@ -80,6 +88,7 @@ def main_function():
 
 main_function()
 
+# Notes on Pythagorean Triples
 
 # At most one of a, b, c is a square.
 # The area of a Pythagorean triangle cannot be the square[9]:p. 17 or twice the square[9]:p. 21 of a natural number.
