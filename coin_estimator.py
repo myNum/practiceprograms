@@ -4,20 +4,23 @@
 # Round all numbers printed out to the nearest whole number.
 # Allow the user to select whether they want to submit the weight in either grams or pounds.
 
-# Penny = 2.5g, 50 per roll, $0.50
-# Nickel = 5.0g, 40 per roll, $2.00
-# Dime = 2.268g, 50 per roll, $5.00
-# Quarter = 5.67g, 40 per roll, $10.00
+# Penny = 2.5g, 50 per roll, $0.50, total weight per roll: 125g
+# Nickel = 5.0g, 40 per roll, $2.00, total weight per roll: 200g
+# Dime = 2.268g, 50 per roll, $5.00, total weight per roll: 112.4g
+# Quarter = 5.67g, 40 per roll, $10.00, total weight per roll: 226.8g
+
+# 100g = 0.22lbs
 
 weight_type = raw_input("Would you like to use grams or pounds as your weight unit?").lower
 
 if weight_type in [gram, grams, g]:
 if weight_type in [pound, pounds, lb, lbs]:
+print "Please enter the total weight for each of the following coins."
+penny_weight = raw_input("Pennies:\n")
+nickel_weight = raw_input("Nickels:\n")
+dime_weight = raw_input("Dimes:\n")
+quarter_weight = raw_input("Quarters:\n")
 
-penny_weight =
-nickel_weight =
-dime_weight =
-quarter_weight =
 
 penny_wrappers =
 nickel_wrappers =
