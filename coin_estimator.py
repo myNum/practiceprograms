@@ -10,10 +10,10 @@
 # Quarter = 5.67g, 40 per roll, $10.00, total weight per roll: 226.8g
 
 # 100g = 0.22lbs
-
+import math
 def get_unit():
     weight_type = raw_input("Would you like to use grams or pounds as your weight unit?").lower
-
+    get_weight()
     if weight_type in [gram, grams, g]:
         return grams
     if weight_type in [pound, pounds, lb, lbs]:
@@ -27,7 +27,15 @@ def get_weights():
     quarter_weight = raw_input("Quarters:\n")
 
 def number_wrappers():
-    penny_wrappers = penny_weight / 125
-    nickel_wrappers = nickel_weight / 200
-    dime_wrappers = dime_weight / 112.4
-    quarter_wrappers = quarter_weight / 226.8
+    penny_wrappers = math.ceil(penny_weight / 125)
+    print "You will need," penny_wrappers, "penny wrappers.\n"
+    nickel_wrappers = math.ceil(nickel_weight / 200)
+    print "You will need," nickel_wrappers, "nickel wrappers.\n"
+    dime_wrappers = math.ceil(dime_weight / 112.4)
+    print "You will need," dime_wrappers, "dime wrappers.\n"
+    quarter_wrappers = math.ceil(quarter_weight / 226.8)
+    print "You will need," quarter_wrappers, "quarter wrappers.\n"
+
+def main():
+    get_unit()
+    number_wrapper()
