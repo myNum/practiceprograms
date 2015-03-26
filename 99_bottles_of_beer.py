@@ -18,7 +18,7 @@ def the_song():
     while bottle_count != 2:
         print bottle_count, chorus1, bottle_count, chorus2
         print chorus3
-
+# is it possible to increment by a negative 1? research whether this works: bottle_count += -1
         bottle_count = bottle_count - 1
 
         print bottle_count, chorus1, "\n"
